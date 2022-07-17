@@ -1,0 +1,22 @@
+{
+  "name": "industrial_farm",
+  "version": "1.0.0",
+  "description": "Virtual farm dynamic menu.",
+  "main": "index.js",
+  "scripts": {
+    "watch": "node-sass assets/sass/ -o assets/css/ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
+    "compile:css": "node-sass assets/sass/ -o assets/css/ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
+    "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
+    "lint:js": "wp-scripts lint-js 'assets/js/*.js'",
+    "bundle": "dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
+  },
+  "author": "Dmitry Krestovsky",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^7.0.1",
+	"dir-archiver": "^1.1.1"
+  },
+  "dependencies": {
+    "extract-text-webpack-plugin": "^3.0.2"
+  }
+}
