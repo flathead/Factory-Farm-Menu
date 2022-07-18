@@ -1,2 +1,157 @@
+/**********************************************
+ *
+ *  ___       _   _                    _ 
+ * / __| |     | | | |                  | |
+ * | |_| | __ _| |_| |__   ___  __ _  __| |
+ * |  _| |/ _` | __| '_ \ / _ \/ _` |/ _` |
+ * | | | | (_| | |_| | | |  __/ (_| | (_| |
+ * |_| |_|\__,_|\__|_| |_|\___|\__,_|\__,_|
+ * https://t.me/krestovsky
+ *
+ *
+ **********************************************/
+/**************************
+ * Normalize [START]
+ **************************/
+* {
+	box-sizing: border-box;
+	scrollbar-width: thin;
+	scrollbar-color: #2e2e2e transparent;
+}
+
+*::-webkit-scrollbar {
+	width: 2px;
+	height: 2px;
+}
+
+*::-webkit-scrollbar-button {
+	width: 0px;
+	height: 0px;
+}
+
+*::-webkit-scrollbar-thumb {
+	background: #2e2e2e;
+	border: 0px none #ffffff;
+	border-radius: 50px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+	background: #404040;
+}
+
+*::-webkit-scrollbar-thumb:active {
+	background: #1c1c1c;
+}
+
+*::-webkit-scrollbar-track {
+	background: #ffffff;
+	border: 0px none #ffffff;
+	border-radius: 50px;
+}
+
+*::-webkit-scrollbar-track:hover {
+	background: #d6d6d6;
+}
+
+*::-webkit-scrollbar-track:active {
+	background: #b0b0b0;
+}
+
+*::-webkit-scrollbar-corner {
+	background: transparent;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/* Normalize [END] */
+/**************************
+ * Menu [START]
+ **************************/
+section.farm-wrapper {
+	height: 500px;
+}
+
+@media screen and (max-width: 1180px) {
+	section.farm-wrapper {
+		padding: 0 20px;
+	}
+}
+
+section.farm-wrapper .farm-container {
+	margin: 0 auto;
+	height: 100%;
+	max-width: 1140px;
+	background-color: #f2f2f2;
+	position: relative;
+}
+
+@media screen and (max-width: 1180px) {
+	section.farm-wrapper .farm-container {
+		overflow-x: scroll;
+	}
+}
+
+section.farm-wrapper .farm-container a .farm-item {
+	position: absolute;
+	filter: brightness(80%) grayscale(50%) drop-shadow(0 0 0 #c8c8c8);
+	transition: all .15s;
+}
+
+section.farm-wrapper .farm-container a .farm-item:hover {
+	transition: all .30s;
+	filter: brightness(100%) grayscale(0);
+}
+
+section.farm-wrapper .farm-container a .farm-item img {
+	object-fit: cover;
+	transition: all .15s;
+	filter: drop-shadow(0 0 0 #30261c);
+}
+
+section.farm-wrapper .farm-container a .farm-item.item-1 {
+	bottom: 10%;
+	left: 0;
+	z-index: 10;
+}
+
+section.farm-wrapper .farm-container a .farm-item.item-2 {
+	bottom: 26.5%;
+	left: 142px;
+	z-index: 9;
+}
+
+section.farm-wrapper .farm-container a .farm-item.item-3 {
+	bottom: 43.6%;
+	left: 285px;
+	z-index: 8;
+}
+
+section.farm-wrapper .farm-container a .farm-item.item-4 {
+	bottom: 10%;
+	left: 284px;
+	z-index: 10;
+}
+
+section.farm-wrapper .farm-container a .farm-item.item-5 {
+	bottom: 25.7%;
+	left: 419px;
+	z-index: 9;
+}
+
+section.farm-wrapper .farm-container a[data-interactive="true"] .farm-item:hover {
+	transform: translateY(-10px);
+	filter: brightness(100%) grayscale(0) drop-shadow(0 20px 10px #c8c8c8);
+}
+
+section.farm-wrapper .farm-container a[data-interactive="true"] .farm-item:hover img {
+	transition: all .30s;
+	filter: drop-shadow(0 10px 0 #30261c);
+}
+
+/* Menu [END] */
 
 /*# sourceMappingURL=style.css.map */

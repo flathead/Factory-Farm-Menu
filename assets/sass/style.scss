@@ -1,0 +1,145 @@
+/**********************************************
+ *
+ *  ___       _   _                    _ 
+ * / __| |     | | | |                  | |
+ * | |_| | __ _| |_| |__   ___  __ _  __| |
+ * |  _| |/ _` | __| '_ \ / _ \/ _` |/ _` |
+ * | | | | (_| | |_| | | |  __/ (_| | (_| |
+ * |_| |_|\__,_|\__|_| |_|\___|\__,_|\__,_|
+ * https://t.me/krestovsky
+ *
+ *
+ **********************************************/
+
+
+/**************************
+ * Normalize [START]
+ **************************/
+
+* {
+	box-sizing: border-box;
+	scrollbar-width: thin;
+  	scrollbar-color: rgb(46,46,46) transparent;
+
+	&::-webkit-scrollbar {
+		width: 2px;
+		height: 2px;
+	}
+	&::-webkit-scrollbar-button {
+		width: 0px;
+		height: 0px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: #2e2e2e;
+		border: 0px none #ffffff;
+		border-radius: 50px;
+	}
+	&::-webkit-scrollbar-thumb:hover {
+		background: #404040;
+	}
+	&::-webkit-scrollbar-thumb:active {
+		background: #1c1c1c;
+	}
+	&::-webkit-scrollbar-track {
+		background: #ffffff;
+		border: 0px none #ffffff;
+		border-radius: 50px;
+	}
+	&::-webkit-scrollbar-track:hover {
+		background: #d6d6d6;
+	}
+	&::-webkit-scrollbar-track:active {
+		background: #b0b0b0;
+	}
+	&::-webkit-scrollbar-corner {
+		background: transparent;
+	}
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+/* Normalize [END] */
+
+/**************************
+ * Menu [START]
+ **************************/
+
+section.farm-wrapper {
+	height: 500px;
+	@media screen and (max-width: 1180px) {
+		padding: 0 20px;
+	}
+	// Контейнер для блоков
+	.farm-container {
+		margin: 0 auto;
+		height: 100%;
+		max-width: 1140px;
+		background-color: #f2f2f2; // TODO Удалить
+		position: relative;
+		@media screen and (max-width: 1180px) {
+			overflow-x: scroll;
+		}
+		a {
+			// Общий селектор блоков
+			
+			.farm-item {
+				position: absolute;
+				filter: brightness(80%) grayscale(50%) drop-shadow( 0 0 0 rgba(200, 200, 200, 1));
+				transition: all .15s;
+				&:hover {
+					transition: all .30s;
+					filter: brightness(100%) grayscale(0);
+				}
+				img {
+					object-fit: cover;
+					transition: all .15s;
+					filter: drop-shadow( 0 0 0 rgba(48, 38, 28, 1));
+				}
+				// Отдельные блоки
+				&.item-1 {
+					bottom: 10%;
+					left: 0;
+					z-index: 10;
+				}
+				&.item-2 {
+					bottom: 26.5%;
+					left: 142px;
+					z-index: 9;
+				}
+				&.item-3 {
+					bottom: 43.6%;
+					left: 285px;
+					z-index: 8;
+				}
+				&.item-4 {
+					bottom: 10%;
+					left: 284px;
+					z-index: 10;
+				}
+				&.item-5 {
+					bottom: 25.7%;
+					left: 419px;
+					z-index: 9;
+				}
+			}
+			&[data-interactive="true"] {
+				.farm-item {
+					&:hover {
+						transform: translateY(-10px);
+						filter: brightness(100%) grayscale(0) drop-shadow( 0 20px 10px rgba(200, 200, 200, 1));
+						img {
+							transition: all .30s;
+							filter: drop-shadow( 0 10px 0 rgba(48, 38, 28, 1));
+						}
+					}
+				}
+			}
+		}
+		
+	}
+}
+
+/* Menu [END] */
