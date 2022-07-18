@@ -73,12 +73,97 @@ body {
  **************************/
 section.farm-wrapper {
 	height: 500px;
+	background-color: #f2f2f2;
+	position: relative;
 }
 
 @media screen and (max-width: 1180px) {
 	section.farm-wrapper {
 		padding: 0 20px;
 	}
+}
+
+section.farm-wrapper .clouds {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: 11;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+@-webkit-keyframes animCloud {
+	from {
+		-webkit-transform: translateX(100%);
+	}
+	to {
+		-webkit-transform: translateX(-100%);
+	}
+}
+
+@-moz-keyframes animCloud {
+	from {
+		-moz-transform: translateX(100%);
+	}
+	to {
+		-moz-transform: translateX(-100%);
+	}
+}
+
+@keyframes animCloud {
+	from {
+		-webkit-transform: translateX(100%);
+		-moz-transform: translateX(100%);
+		-ms-transform: translateX(100%);
+		-o-transform: translateX(100%);
+		transform: translateX(100%);
+	}
+	to {
+		-webkit-transform: translateX(-100%);
+		-moz-transform: translateX(-100%);
+		-ms-transform: translateX(-100%);
+		-o-transform: translateX(-100%);
+		transform: translateX(-100%);
+	}
+}
+
+section.farm-wrapper .clouds img.cloud {
+	width: 100%;
+	left: 0;
+	top: 0;
+	position: absolute;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	pointer-events: none;
+	z-index: 12;
+}
+
+section.farm-wrapper .clouds .cloud1 {
+	-webkit-animation: animCloud 20s infinite linear;
+	-moz-animation: animCloud 20s infinite linear;
+	animation: animCloud 20s infinite linear;
+}
+
+section.farm-wrapper .clouds .cloud2 {
+	-webkit-animation: animCloud 40s infinite linear;
+	-moz-animation: animCloud 40s infinite linear;
+	animation: animCloud 40s infinite linear;
+}
+
+section.farm-wrapper .clouds .cloud3 {
+	-webkit-animation: animCloud 60s infinite linear;
+	-moz-animation: animCloud 60s infinite linear;
+	animation: animCloud 60s infinite linear;
+}
+
+section.farm-wrapper .clouds .cloud4 {
+	-webkit-animation: animCloud 80s infinite linear;
+	-moz-animation: animCloud 80s infinite linear;
+	animation: animCloud 80s infinite linear;
 }
 
 section.farm-wrapper .farm-container {
@@ -113,33 +198,63 @@ section.farm-wrapper .farm-container a .farm-item img {
 }
 
 section.farm-wrapper .farm-container a .farm-item.item-1 {
-	bottom: 10%;
+	bottom: 20.6%;
 	left: 0;
 	z-index: 10;
 }
 
 section.farm-wrapper .farm-container a .farm-item.item-2 {
-	bottom: 26.5%;
-	left: 142px;
+	bottom: 36.3%;
+	left: 140px;
 	z-index: 9;
 }
 
 section.farm-wrapper .farm-container a .farm-item.item-3 {
-	bottom: 43.6%;
-	left: 285px;
+	bottom: 52%;
+	left: 280px;
 	z-index: 8;
 }
 
 section.farm-wrapper .farm-container a .farm-item.item-4 {
-	bottom: 10%;
-	left: 284px;
+	bottom: 19%;
+	left: 284.5px;
 	z-index: 10;
 }
 
 section.farm-wrapper .farm-container a .farm-item.item-5 {
-	bottom: 25.7%;
-	left: 419px;
+	bottom: 34.7%;
+	left: 424.6px;
 	z-index: 9;
+}
+
+section.farm-wrapper .farm-container a .farm-item.item-6 {
+	bottom: 50.3%;
+	left: 564.8px;
+	z-index: 8;
+}
+
+section.farm-wrapper .farm-container a .farm-item.item-7 {
+	bottom: 17.4%;
+	left: 569px;
+	z-index: 9;
+}
+
+section.farm-wrapper .farm-container a .farm-item.item-8 {
+	bottom: 0.1%;
+	left: 713.2px;
+	z-index: 10;
+}
+
+section.farm-wrapper .farm-container a .farm-item.item-9 {
+	bottom: 33.2%;
+	left: 708.2px;
+	z-index: 8;
+}
+
+section.farm-wrapper .farm-container a .farm-item.item-10 {
+	bottom: 48.82%;
+	left: 848px;
+	z-index: 7;
 }
 
 section.farm-wrapper .farm-container a[data-interactive="true"] .farm-item:hover {

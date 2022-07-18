@@ -1,11 +1,11 @@
 jQuery( function( $ ) {
-	setTimeout( () => {
-		console.log( 'Too' );
-	}, 1000 );
-	setTimeout( () => {
-		console.log( 'quiet' );
-	}, 2000 );
-	setTimeout( () => {
-		console.log( 'here...' );
-	}, 3000 );
+	$( '.farm-item' ).on( 'mouseenter', function() {
+		$( '.clouds' ).fadeOut(300);
+	} );
+	$( '.farm-container' ).on( 'mouseleave', function() {
+			console.log('Farm zone cursor leave...');
+			setTimeout( function() {
+				$( '.clouds' ).fadeIn(1000);
+			}, 1000);
+	} );
 } );
