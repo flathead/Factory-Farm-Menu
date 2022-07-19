@@ -1,7 +1,6 @@
 jQuery( function ( $ ) {
 	// Когда изображения в ферме загружены - снять прелоадер
 	$( '.farm-item img' ).waitForImages( function () {
-		console.log( 'All farm images done!' );
 		$( '.farm-container' ).addClass( 'loaded' );
 		if ( $( window ).width() >= 480 ) {
 			$( '#farm-title' ).html( 'Наведите курсор на любой блок' );
@@ -12,13 +11,11 @@ jQuery( function ( $ ) {
 
 	// При наведении на блок скрывать облака
 	$( '.farm-item' ).on( 'mouseenter', function () {
-		console.log( 'Hide the clouds!' );
 		$( '.clouds' ).fadeOut( 300 );
-	});
+	} );
 
 	// Если курсор за пределами контейнера "фермы" - показывать облака через 300мс
 	$( '.farm-container' ).on( 'mouseleave', function () {
-		console.log( 'Farm zone cursor leave...' );
 		setTimeout(function () {
 			$( '.clouds' ).fadeIn( 1000 );
 		}, 300);
@@ -26,7 +23,8 @@ jQuery( function ( $ ) {
 
 	// При наведении на блок переносить атрибут названия в заголовок
 	if ( $( window ).width() >= 480 ) {
-		$( 'a[data-interactive^="true"]' ).on( 
+		$( 'a[data-interactive^="true"]' )
+		.on( 
 			'mouseenter', function() {
 				const linkData = $( this ).attr( 'data-menu' );
 
@@ -48,7 +46,8 @@ jQuery( function ( $ ) {
 			}
 		);
 	} else {
-		$( 'a[data-interactive^="true"]' ).on( 
+		$( 'a[data-interactive^="true"]' )
+		.on( 
 			'mouseenter', function() {
 				const linkData = $( this ).attr( 'data-menu' );
 
