@@ -73,6 +73,8 @@ body {
  * Menu [START]
  **************************/
 section.farm-wrapper {
+	background: url(../images/bg.jpg) no-repeat center center;
+	background-size: cover;
 	position: relative;
 }
 
@@ -226,8 +228,6 @@ section.farm-wrapper .farm-container {
 	max-width: 1140px;
 	position: relative;
 	border-radius: 20px;
-	background: url(../images/bg.jpg) no-repeat center center;
-	background-size: cover;
 }
 
 section.farm-wrapper .farm-container::before {
