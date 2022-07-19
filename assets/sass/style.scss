@@ -317,6 +317,9 @@ section.farm-wrapper {
 			.farm-item {
 				position: absolute;
 				filter: brightness(80%) grayscale(50%);
+				@media screen and (max-width: 480px) {
+					filter: none;
+				}
 				transition: all .15s;
 			
 				&:hover {

@@ -353,6 +353,12 @@ section.farm-wrapper .farm-container a .farm-item {
 	transition: all .15s;
 }
 
+@media screen and (max-width: 480px) {
+	section.farm-wrapper .farm-container a .farm-item {
+		filter: none;
+	}
+}
+
 section.farm-wrapper .farm-container a .farm-item:hover {
 	transition: all .30s;
 	filter: brightness(100%) grayscale(0);
