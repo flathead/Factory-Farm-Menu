@@ -8,4 +8,7 @@ jQuery( function( $ ) {
 				$( '.clouds' ).fadeIn(1000);
 			}, 1000);
 	} );
+	$( '.farm-item img' ).on( 'load', function() {
+		$( this ).closest( '.farm-container' ).addClass( 'loaded' );
+	} );
 } );

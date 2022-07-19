@@ -73,7 +73,6 @@ body {
  **************************/
 section.farm-wrapper {
 	height: 500px;
-	background-color: #f2f2f2;
 	position: relative;
 }
 
@@ -92,6 +91,13 @@ section.farm-wrapper .clouds {
 	left: 0;
 	overflow: hidden;
 	pointer-events: none;
+	opacity: .9;
+}
+
+@media screen and (max-width: 480px) {
+	section.farm-wrapper .clouds {
+		display: none;
+	}
 }
 
 @-webkit-keyframes animCloud {
@@ -170,8 +176,34 @@ section.farm-wrapper .farm-container {
 	margin: 0 auto;
 	height: 100%;
 	max-width: 1140px;
-	background-color: #f2f2f2;
 	position: relative;
+	border-radius: 20px;
+}
+
+section.farm-wrapper .farm-container::before {
+	border-radius: 20px;
+	content: '';
+	background: #f3f5f4e4;
+	position: absolute;
+	z-index: 12;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+@keyframes farm-layout {
+	99% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+		pointer-events: none;
+	}
+}
+
+section.farm-wrapper .farm-container.loaded::before {
+	animation: farm-layout 1s forwards linear;
 }
 
 @media screen and (max-width: 1180px) {
@@ -182,7 +214,7 @@ section.farm-wrapper .farm-container {
 
 section.farm-wrapper .farm-container a .farm-item {
 	position: absolute;
-	filter: brightness(80%) grayscale(50%) drop-shadow(0 0 0 #c8c8c8);
+	filter: brightness(80%) grayscale(50%);
 	transition: all .15s;
 }
 
@@ -194,77 +226,85 @@ section.farm-wrapper .farm-container a .farm-item:hover {
 section.farm-wrapper .farm-container a .farm-item img {
 	object-fit: cover;
 	transition: all .15s;
-	filter: drop-shadow(0 0 0 #30261c);
 }
 
 section.farm-wrapper .farm-container a .farm-item.item-1 {
 	bottom: 20.6%;
 	left: 0;
 	z-index: 10;
+	clip-path: url(#SvgPath-block-1);
 }
 
 section.farm-wrapper .farm-container a .farm-item.item-2 {
 	bottom: 36.3%;
 	left: 140px;
 	z-index: 9;
+	clip-path: url(#SvgPath-block-2);
 }
 
 section.farm-wrapper .farm-container a .farm-item.item-3 {
 	bottom: 52%;
 	left: 280px;
 	z-index: 8;
+	clip-path: url(#SvgPath-block-3);
 }
 
 section.farm-wrapper .farm-container a .farm-item.item-4 {
-	bottom: 19%;
-	left: 284.5px;
+	bottom: 19.2%;
+	left: 284.2px;
 	z-index: 10;
+	clip-path: url(#SvgPath-block-4);
 }
 
 section.farm-wrapper .farm-container a .farm-item.item-5 {
-	bottom: 34.7%;
-	left: 424.6px;
+	bottom: 34.8%;
+	left: 424px;
 	z-index: 9;
+	clip-path: url(#SvgPath-block-5);
 }
 
 section.farm-wrapper .farm-container a .farm-item.item-6 {
 	bottom: 50.3%;
 	left: 564.8px;
 	z-index: 8;
+	clip-path: url(#SvgPath-block-6);
 }
 
 section.farm-wrapper .farm-container a .farm-item.item-7 {
-	bottom: 17.4%;
-	left: 569px;
+	bottom: 17.6%;
+	left: 568px;
 	z-index: 9;
+	clip-path: url(#SvgPath-block-7);
 }
 
 section.farm-wrapper .farm-container a .farm-item.item-8 {
-	bottom: 0.1%;
-	left: 713.2px;
+	bottom: 0.5%;
+	left: 712px;
 	z-index: 10;
+	clip-path: url(#SvgPath-block-8);
 }
 
 section.farm-wrapper .farm-container a .farm-item.item-9 {
 	bottom: 33.2%;
 	left: 708.2px;
 	z-index: 8;
+	clip-path: url(#SvgPath-block-9);
 }
 
 section.farm-wrapper .farm-container a .farm-item.item-10 {
 	bottom: 48.82%;
 	left: 848px;
 	z-index: 7;
+	clip-path: url(#SvgPath-block-10);
 }
 
 section.farm-wrapper .farm-container a[data-interactive="true"] .farm-item:hover {
 	transform: translateY(-10px);
-	filter: brightness(100%) grayscale(0) drop-shadow(0 20px 10px #c8c8c8);
+	filter: brightness(100%) grayscale(0);
 }
 
 section.farm-wrapper .farm-container a[data-interactive="true"] .farm-item:hover img {
 	transition: all .30s;
-	filter: drop-shadow(0 10px 0 #30261c);
 }
 
 /* Menu [END] */

@@ -69,7 +69,7 @@ body {
 
 section.farm-wrapper {
 	height: 500px;
-	background-color: #f2f2f2; // TODO Удалить
+	//background-color: #f3f5f4; // TODO Удалить
 	@media screen and (max-width: 1180px) {
 		padding: 0 20px;
 	}
@@ -84,7 +84,10 @@ section.farm-wrapper {
 		left: 0;
 		overflow: hidden;
 		pointer-events: none;
-
+		opacity: .9;
+		@media screen and (max-width: 480px) {
+			display: none;
+		}
 		@-webkit-keyframes animCloud {
 			from {
 				-webkit-transform: translateX(100%)
@@ -156,8 +159,34 @@ section.farm-wrapper {
 		margin: 0 auto;
 		height: 100%;
 		max-width: 1140px;
-		background-color: #f2f2f2; // TODO Удалить
+		//background-color: #f2f2f2; // TODO Удалить
 		position: relative;
+		border-radius: 20px;
+		&::before {
+			border-radius: 20px;
+			content: '';
+			background: #f3f5f4e4;
+			position: absolute;
+			z-index: 12;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+		&.loaded {
+			@keyframes farm-layout {
+				99% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 0;
+					pointer-events: none;
+				}
+			}
+			&::before {
+				animation: farm-layout 1s forwards linear;
+			}
+		}
 		@media screen and (max-width: 1180px) {
 			overflow-x: scroll;
 		}
@@ -166,11 +195,8 @@ section.farm-wrapper {
 			
 			.farm-item {
 				position: absolute;
-				filter: brightness(80%) grayscale(50%) drop-shadow( 0 0 0 rgba(200, 200, 200, 1));
+				filter: brightness(80%) grayscale(50%);
 				transition: all .15s;
-				//clip-path: url(#SvgOne);
-				//-webkit-clip-path: url(#SvgOne);
-				//overflow: visible;
 				&:hover {
 					transition: all .30s;
 					filter: brightness(100%) grayscale(0);
@@ -178,69 +204,76 @@ section.farm-wrapper {
 				img {
 					object-fit: cover;
 					transition: all .15s;
-					filter: drop-shadow( 0 0 0 rgba(48, 38, 28, 1));
 				}
 				// Отдельные блоки
 				&.item-1 {
 					bottom: 20.6%;
 					left: 0;
 					z-index: 10;
-					
+					clip-path: url(#SvgPath-block-1);
 				}
 				&.item-2 {
 					bottom: 36.3%;
 					left: 140px;
 					z-index: 9;
+					clip-path: url(#SvgPath-block-2);
 				}
 				&.item-3 {
 					bottom: 52%;
 					left: 280px;
 					z-index: 8;
+					clip-path: url(#SvgPath-block-3);
 				}
 				&.item-4 {
-					bottom: 19%;
-					left: 284.5px;
+					bottom: 19.2%;
+    				left: 284.2px;
 					z-index: 10;
+					clip-path: url(#SvgPath-block-4);
 				}
 				&.item-5 {
-					bottom: 34.7%;
-    				left: 424.6px;
+					bottom: 34.8%;
+    				left: 424px;
     				z-index: 9;
+					clip-path: url(#SvgPath-block-5);
 				}
 				&.item-6 {
 					bottom: 50.3%;
 					left: 564.8px;
 					z-index: 8;
+					clip-path: url(#SvgPath-block-6);
 				}
 				&.item-7 {
-					bottom: 17.4%;
-					left: 569px;
+					bottom: 17.6%;
+    				left: 568px;
 					z-index: 9;
+					clip-path: url(#SvgPath-block-7);
 				}
 				&.item-8 {
-					bottom: 0.1%;
-    				left: 713.2px;
+					bottom: 0.5%;
+    				left: 712px;
 					z-index: 10;
+					clip-path: url(#SvgPath-block-8);
 				}
 				&.item-9 {
 					bottom: 33.2%;
 					left: 708.2px;
 					z-index: 8;
+					clip-path: url(#SvgPath-block-9);
 				}
 				&.item-10 {
 					bottom: 48.82%;
 					left: 848px;
 					z-index: 7;
+					clip-path: url(#SvgPath-block-10);
 				}
 			}
 			&[data-interactive="true"] {
 				.farm-item {
 					&:hover {
 						transform: translateY(-10px);
-						filter: brightness(100%) grayscale(0) drop-shadow( 0 20px 10px rgba(200, 200, 200, 1));
+						filter: brightness(100%) grayscale(0);
 						img {
 							transition: all .30s;
-							filter: drop-shadow( 0 10px 0 rgba(48, 38, 28, 1));
 						}
 					}
 				}
