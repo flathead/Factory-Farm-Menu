@@ -1,3 +1,5 @@
+// Библиотека добавлена по причине некорректной обработки jQuery ".on('load')" в разных браузерах
+
 ;(function (factory) {
     if (typeof define === 'function' && define.amd) {
         define(['jquery'], factory);
