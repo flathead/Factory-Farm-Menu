@@ -192,6 +192,82 @@ section.farm-wrapper .farm-container::before {
 	height: 100%;
 }
 
+section.farm-wrapper .farm-container .loader {
+	--path: #2F3545;
+	--dot: #5628EE;
+	--duration: 3s;
+	width: 44px;
+	height: 44px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 13;
+	display: inline-block;
+	margin: 0 16px;
+}
+
+section.farm-wrapper .farm-container .loader:before {
+	content: '';
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	position: absolute;
+	display: block;
+	background: var(--dot);
+	top: 37px;
+	left: 19px;
+	transform: translate(-18px, -18px);
+	animation: dotRect var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+}
+
+section.farm-wrapper .farm-container .loader svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+section.farm-wrapper .farm-container .loader svg rect {
+	fill: none;
+	stroke: var(--path);
+	stroke-width: 10px;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+	stroke-dasharray: 192 64 192 64;
+	stroke-dashoffset: 0;
+	animation: pathRect 3s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+}
+
+@keyframes pathRect {
+	25% {
+		stroke-dashoffset: 64;
+	}
+	50% {
+		stroke-dashoffset: 128;
+	}
+	75% {
+		stroke-dashoffset: 192;
+	}
+	100% {
+		stroke-dashoffset: 256;
+	}
+}
+
+@keyframes dotRect {
+	25% {
+		transform: translate(0, 0);
+	}
+	50% {
+		transform: translate(18px, -18px);
+	}
+	75% {
+		transform: translate(0, -36px);
+	}
+	100% {
+		transform: translate(-18px, -18px);
+	}
+}
+
 @keyframes farm-layout {
 	99% {
 		opacity: 0;
@@ -202,8 +278,19 @@ section.farm-wrapper .farm-container::before {
 	}
 }
 
+@keyframes loader-anim {
+	100% {
+		opacity: 0;
+		pointer-events: none;
+	}
+}
+
 section.farm-wrapper .farm-container.loaded::before {
 	animation: farm-layout 1s forwards linear;
+}
+
+section.farm-wrapper .farm-container.loaded .loader {
+	animation: loader-anim 1s forwards linear;
 }
 
 @media screen and (max-width: 1180px) {
