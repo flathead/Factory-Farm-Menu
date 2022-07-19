@@ -7,7 +7,7 @@ jQuery(function ($) {
 		console.log('Farm zone cursor leave...');
 		setTimeout(function () {
 			$('.clouds').fadeIn(1000);
-		}, 1000);
+		}, 300);
 	});
 	$('.farm-item img').waitForImages( function () {
 		console.log( 'All farm images done!' );
