@@ -105,10 +105,10 @@ section.farm-wrapper {
 			white-space: nowrap;
 			overflow: hidden;
 			@media screen and (max-width: 480px) {
-				width: 100%;
-				white-space: pre-wrap;
-				text-align: center;
-				font-size: 1.2rem;
+				width: 100% !important;
+				white-space: pre-wrap !important;
+				text-align: center !important;
+				font-size: 1.2rem !important;
 			}
 			img {
 				margin-right: 6px;
@@ -127,7 +127,7 @@ section.farm-wrapper {
 		pointer-events: none;
 		opacity: .9;
 		@media screen and (max-width: 480px) {
-			display: none;
+			display: none !important;
 		}
 		@-webkit-keyframes animCloud {
 			from {
@@ -318,7 +318,7 @@ section.farm-wrapper {
 				position: absolute;
 				filter: brightness(80%) grayscale(50%);
 				@media screen and (max-width: 480px) {
-					filter: none;
+					filter: none !important;
 				}
 				transition: all .15s;
 			

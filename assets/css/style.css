@@ -119,10 +119,10 @@ section.farm-wrapper .farm-title-container h1#farm-title {
 
 @media screen and (max-width: 480px) {
 	section.farm-wrapper .farm-title-container h1#farm-title {
-		width: 100%;
-		white-space: pre-wrap;
-		text-align: center;
-		font-size: 1.2rem;
+		width: 100% !important;
+		white-space: pre-wrap !important;
+		text-align: center !important;
+		font-size: 1.2rem !important;
 	}
 }
 
@@ -144,7 +144,7 @@ section.farm-wrapper .clouds {
 
 @media screen and (max-width: 480px) {
 	section.farm-wrapper .clouds {
-		display: none;
+		display: none !important;
 	}
 }
 
@@ -355,7 +355,7 @@ section.farm-wrapper .farm-container a .farm-item {
 
 @media screen and (max-width: 480px) {
 	section.farm-wrapper .farm-container a .farm-item {
-		filter: none;
+		filter: none !important;
 	}
 }
 
