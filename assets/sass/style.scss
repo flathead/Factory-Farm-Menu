@@ -71,10 +71,12 @@ body {
 section.farm-wrapper {
 	background: url(../images/bg.jpg) no-repeat center center;
 	background-size: cover;
+	padding-top: 20px;
 	padding-bottom: 50px;
 
 	@media screen and (max-width: 1180px) {
 		padding: 0 20px;
+		padding-top: 20px;
 		padding-bottom: 50px;
 	}
 	position: relative;
