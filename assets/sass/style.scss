@@ -104,6 +104,12 @@ section.farm-wrapper {
 			margin: 2rem 1rem;
 			white-space: nowrap;
 			overflow: hidden;
+			@media screen and (max-width: 480px) {
+				width: 100%;
+				white-space: pre-wrap;
+				text-align: center;
+				font-size: 1.2rem;
+			}
 			img {
 				margin-right: 6px;
 			}
