@@ -1,6 +1,6 @@
 jQuery(function ($) {
 	$('.farm-item').on('mouseenter', function () {
-		$( 'Hide the clouds!' )
+		console.log( 'Hide the clouds!' );
 		$('.clouds').fadeOut(300);
 	});
 	$('.farm-container').on('mouseleave', function () {
