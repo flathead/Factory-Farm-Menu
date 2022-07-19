@@ -3,7 +3,7 @@ jQuery( function ( $ ) {
 	$( '.farm-item img' ).waitForImages( function () {
 		console.log( 'All farm images done!' );
 		$( '.farm-container' ).addClass( 'loaded' );
-		$( '#farm-title' ).text( 'Наведите курсор на любой блок' );
+		$( '#farm-title' ).html( 'Наведите курсор на любой блок' );
 	});
 
 	// При наведении на блок скрывать облака
@@ -26,17 +26,18 @@ jQuery( function ( $ ) {
 			$( '#farm-title' ).hide(); // Так быстрее, чем перезагрузка через .load или ajax
 			$( '#farm-title' ).show();
 
-			$( '#farm-title' ).text( linkData).css( 
+			$( '#farm-title' ).html( '<img width="20" height="auto" src="./assets/images/svg/link.svg" alt="" />' + linkData ).css( 
 				{	
-					'animation' : 'typing ' + (linkData.length * 0.05) + 's, blink-caret .5s step-end infinite alternate',
-					'animation-timing-function' : 'steps(' + (linkData.length + 2) +'), step-end', 
-					'width' : linkData.length + 2 + 'ch' 
+					'animation' : 'typing ' + ( linkData.length * 0.05 ) + 's, blink-caret .5s step-end infinite alternate, title-shadow ' + ( linkData.length * 0.05 ) + 's forwards linear',
+					'animation-timing-function' : 'steps(' + ( linkData.length + 2 ) +'), step-end', 
+					'width' : linkData.length + 4 + 'ch',
+					'font-weight' : '600'
 				} 
 			);
 		},
 	).on(
 		'mouseleave', function() {
-			$( '#farm-title' ).css( { 'animation' : 'none', 'width' : 'auto' } ).text( 'Наведите курсор на любой блок' );
+			$( '#farm-title' ).css( { 'animation' : 'none', 'width' : 'auto', 'font-weight' : 'normal' } ).html( 'Наведите курсор на любой блок' );
 		}
 	);
 } );
