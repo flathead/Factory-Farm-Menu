@@ -202,6 +202,8 @@ section.farm-wrapper {
 		max-width: 1140px;
 		position: relative;
 		border-radius: 20px;
+		background: url(../images/bg.jpg) no-repeat center center;
+		background-size: cover;
 		&::before {
 			border-radius: 20px;
 			content: '';
