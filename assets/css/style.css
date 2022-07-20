@@ -93,6 +93,34 @@ section.farm-wrapper .farm-title-container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
+	overflow: visible;
+}
+
+section.farm-wrapper .farm-title-container p#link-anonce {
+	margin: 0;
+	display: none;
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	transform: translateX(-50%) translateY(20px);
+	opacity: 0;
+	font-weight: 100;
+	align-items: center;
+	width: auto;
+	text-align: center;
+}
+
+@keyframes anonce-show {
+	100% {
+		opacity: 1;
+		transform: translateX(-50%) translateY(10px);
+	}
+}
+
+section.farm-wrapper .farm-title-container p#link-anonce.show {
+	display: flex !important;
+	animation: anonce-show 1s forwards ease-in-out;
 }
 
 @keyframes typing {
@@ -114,13 +142,11 @@ section.farm-wrapper .farm-title-container {
 }
 
 section.farm-wrapper .farm-title-container h1#farm-title {
-	border-right: 2px solid transparent;
 	font-size: 1.4rem;
 	font-weight: normal;
 	width: auto;
-	margin: 2rem 1rem;
+	margin: 0;
 	white-space: nowrap;
-	overflow: hidden;
 }
 
 @media screen and (max-width: 480px) {
@@ -370,7 +396,7 @@ section.farm-wrapper .farm-container a .farm-item:hover {
 	filter: brightness(100%) grayscale(0);
 }
 
-section.farm-wrapper .farm-container a .farm-item img {
+section.farm-wrapper .farm-container a .farm-item img.farm-block {
 	object-fit: cover;
 	transition: all .15s;
 }
@@ -452,6 +478,49 @@ section.farm-wrapper .farm-container a[data-interactive="true"] .farm-item:hover
 
 section.farm-wrapper .farm-container a[data-interactive="true"] .farm-item:hover img {
 	transition: all .30s;
+}
+
+section.farm-wrapper .farm-container .animations img.anim {
+	position: absolute;
+	z-index: 11;
+}
+
+@keyframes smoke-animation {
+	0% {
+		opacity: .8;
+		transform: translateY(0);
+	}
+	90% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	91% {
+		transform: translateY(0);
+	}
+	100% {
+		opacity: .8;
+	}
+}
+
+section.farm-wrapper .farm-container .animations .anim-1 {
+	animation: smoke-animation 3s infinite ease-in-out;
+	bottom: 36%;
+	left: 780px;
+	width: 140px;
+}
+
+section.farm-wrapper .farm-container .animations .anim-2 {
+	animation: smoke-animation 3s infinite ease-in-out;
+	bottom: 32%;
+	left: 784px;
+	width: 71px;
+}
+
+section.farm-wrapper .farm-container .animations .anim-3 {
+	opacity: .6;
+	bottom: 48%;
+	left: 626px;
+	width: 54px;
 }
 
 /* Menu [END] */

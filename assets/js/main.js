@@ -1,12 +1,21 @@
 jQuery( function ( $ ) {
+
+	const typed = new Typed( '#farm-title', {
+		strings: ['Пожалуйста, подождите'],
+		typeSpeed: 30,
+		stringsElement: null,
+		smartBackspace: true,
+	} );
+
 	// Когда изображения в ферме загружены - снять прелоадер
 	$( '.farm-item img' ).waitForImages( function () {
 		$( '.farm-container' ).addClass( 'loaded' );
 		if ( $( window ).width() >= 480 ) {
-			$( '#farm-title' ).html( 'Наведите курсор на любой блок' );
+			typed.strings = ['Наведите курсор на любой блок'];
 		} else {
-			$( '#farm-title' ).html( 'Нажмите на любой блок' );
+			typed.strings = ['Нажмите на любой блок'];
 		}
+		typed.reset();
 	});
 
 	// При наведении на блок скрывать облака
@@ -28,21 +37,19 @@ jQuery( function ( $ ) {
 			'mouseenter', function() {
 				const linkData = $( this ).attr( 'data-menu' );
 
-				$( '#farm-title' ).hide(); // Так быстрее, чем перезагрузка через .load или ajax
-				$( '#farm-title' ).show();
+				typed.strings = ['<img width="20" height="auto" src="./assets/images/svg/link.svg" alt="" />' + linkData];
+				typed.reset();
 
-				$( '#farm-title' ).html( '<img width="20" height="auto" src="./assets/images/svg/link.svg" alt="" />' + linkData ).css( 
-					{	
-						'animation' : 'typing ' + ( linkData.length * 0.05 ) + 's, blink-caret .5s step-end infinite alternate, title-shadow ' + ( linkData.length * 0.05 ) + 's forwards linear',
-						'animation-timing-function' : 'steps(' + ( linkData.length + 2 ) +'), step-end', 
-						'width' : linkData.length + 4 + 'ch',
-						'font-weight' : '600'
-					} 
-				);
+				$( '#link-anonce' ).addClass('show');
+
+				console.log('Выделено: ' + typed.strings);
 			},
 		).on(
 			'mouseleave', function() {
-				$( '#farm-title' ).css( { 'animation' : 'none', 'width' : 'auto', 'font-weight' : 'normal' } ).html( 'Наведите курсор на любой блок' );
+				$( '#farm-title' ).css( { 'font-weight' : 'normal' } );
+				typed.strings = [ 'Наведите курсор на любой блок' ];
+				typed.reset();
+				$( '#link-anonce' ).removeClass('show');
 			}
 		);
 	} else {
@@ -51,19 +58,22 @@ jQuery( function ( $ ) {
 			'mouseenter', function() {
 				const linkData = $( this ).attr( 'data-menu' );
 
-				$( '#farm-title' ).hide(); // Так быстрее, чем перезагрузка через .load или ajax
-				$( '#farm-title' ).show();
-
-				$( '#farm-title' ).html( '<img width="20" height="auto" src="./assets/images/svg/link.svg" alt="" />' + linkData ).css( 
-					{	
-						'font-weight' : '600'
-					} 
-				);
+				typed.strings = [ '<img width="20" height="auto" src="./assets/images/svg/link.svg" alt="" />' + linkData ];
+				typed.reset();
+				
+				$( '#link-anonce' ).addClass('show');
 			},
 		).on(
 			'mouseleave', function() {
-				$( '#farm-title' ).html( 'Нажмите на любой блок' ).css( { 'font-weight' : 'normal' } );
+				typed.strings = [ 'Нажмите на любой блок' ];
+				typed.reset();
+
+				$( '#link-anonce' ).removeClass('show');
+
+				$( '#farm-title' ).css( { 'font-weight' : 'normal' } );
 			}
 		);
 	}
+
+	
 } );
