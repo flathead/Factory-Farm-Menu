@@ -239,8 +239,8 @@ section.farm-wrapper {
 		&::before {
 			border-radius: 20px;
 			content: '';
-			background: #f3f5f4e4;
-			position: absolute;
+			background: rgba(243, 245, 244, 0.95);
+			position: fixed;
 			z-index: 12;
 			top: 0;
 			left: 0;
@@ -444,6 +444,7 @@ section.farm-wrapper {
 			img.anim {
 				position: absolute;
 				z-index: 11;
+				pointer-events: none;
 			}
 			@keyframes smoke-animation {
 				0% {
