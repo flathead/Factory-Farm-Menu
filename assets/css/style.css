@@ -399,6 +399,7 @@ section.farm-wrapper .farm-container a .farm-item:hover {
 section.farm-wrapper .farm-container a .farm-item img.farm-block {
 	object-fit: cover;
 	transition: all 0.15s;
+	filter: drop-shadow(0 0 4px #f5f5f5);
 }
 
 section.farm-wrapper .farm-container a .farm-item.item-1 {
@@ -455,6 +456,10 @@ section.farm-wrapper .farm-container a .farm-item.item-8 {
 	left: 712px;
 	z-index: 10;
 	clip-path: url(#SvgPath-block-8);
+}
+
+section.farm-wrapper .farm-container a .farm-item.item-8 img {
+	filter: none;
 }
 
 section.farm-wrapper .farm-container a .farm-item.item-9 {
