@@ -483,6 +483,10 @@ section.farm-wrapper .farm-container a .farm-item.item-11 {
 	clip-path: url(#SvgPath-block-11);
 }
 
+section.farm-wrapper .farm-container a .farm-item.item-11 img {
+	filter: none;
+}
+
 section.farm-wrapper .farm-container a[data-interactive="true"] .farm-item:hover {
 	transform: translateY(-10px);
 	filter: brightness(100%) grayscale(0);
