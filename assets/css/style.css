@@ -376,6 +376,13 @@ section.farm-wrapper .farm-container.loaded .loader {
 @media screen and (max-width: 1180px) {
 	section.farm-wrapper .farm-container {
 		overflow-x: scroll;
+		overflow-y: hidden;
+	}
+}
+
+@media screen and (max-height: 640px) {
+	section.farm-wrapper .farm-container {
+		overflow-y: auto !important;
 	}
 }
 
@@ -420,7 +427,7 @@ section.farm-wrapper .farm-container a .farm-item.item-3 {
 	bottom: 54.3%;
 	left: 302px;
 	z-index: 8;
-	clip-path: url(#SvgPath-block-3);
+	clip-path: url(#SvgPath-block-4);
 }
 
 section.farm-wrapper .farm-container a .farm-item.item-4 {
@@ -477,9 +484,9 @@ section.farm-wrapper .farm-container a .farm-item.item-10 {
 }
 
 section.farm-wrapper .farm-container a .farm-item.item-11 {
-	bottom: 15.2%;
-	left: 910px;
-	z-index: 8;
+	bottom: -0.4%;
+	left: 457px;
+	z-index: 10;
 	clip-path: url(#SvgPath-block-11);
 }
 
@@ -542,8 +549,8 @@ section.farm-wrapper .farm-container .animations .anim-3 {
 
 section.farm-wrapper .farm-container .animations .anim-4 {
 	opacity: 1;
-	bottom: 39.82%;
-	left: 900px;
+	bottom: 27%;
+	left: 500px;
 	z-index: 8;
 	width: 20px;
 	offset-path: path("M 0 0 C 16 0 32 0 49 9 C 55 12 55 21 49 23 C 44 25 37 25 32 20 C 26 15 21 12 15 10 C 11 9 9 9 6 11 C 2 15 3 21 6 23 C 10 26 14 28 22 31 C 29.6667 33.6667 37.3333 36.3333 50 35 C 57 34 65.3333 25 68 12");
