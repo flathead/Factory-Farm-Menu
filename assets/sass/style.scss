@@ -80,7 +80,7 @@ section.farm-wrapper {
   }
   position: relative;
 
-  .farm-title-container {
+  /* .farm-title-container {
     height: 50px;
     display: flex;
     align-items: center;
@@ -146,9 +146,9 @@ section.farm-wrapper {
         margin-right: 6px;
       }
     }
-  }
+  } */
 
-  .clouds {
+  /* .clouds {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -225,7 +225,7 @@ section.farm-wrapper {
       -moz-animation: animCloud 80s infinite linear;
       animation: animCloud 80s infinite linear;
     }
-  }
+  } */
 
   // Контейнер для блоков
   .farm-container {
@@ -537,6 +537,76 @@ section.farm-wrapper {
         }
         animation: butterflyDistance 20s infinite ease-in-out;
       }
+    }
+  }
+}
+
+.float-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #222;
+  border-radius: 50%;
+  transform: translateY(-50%) translateX(-50%); /* центрируем кружок */
+  position: absolute; /* задаём абсолютное позиционирование, чтобы элемент не влиял на остальные элементы и его можно было бы позиционировать следом за курсором */
+  z-index: 999; /* чтобы элемент был над остальными элементами */
+  pointer-events: none; /* чтобы сквозь элемент можно было взаимодействовать с элементами, находящимися под ним */
+  transition: width 0.64s, height 0.64s, border-radius 0.64s, background 0.64s,
+    transform 0.64s;
+  @media screen and (max-width: 480px) {
+    border: none;
+  }
+
+  #current-block-title {
+    height: 0;
+    width: 0;
+    opacity: 0;
+    transition: all 0.64s;
+    padding: 1rem;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    pointer-events: none;
+    text-decoration: none;
+    color: #222;
+  }
+  a#current-block-link {
+    display: none;
+    margin-top: 10px;
+    color: #1e63d9;
+    text-decoration: none;
+    font-weight: 700;
+    @media screen and (min-width: 480px) {
+      display: none !important;
+    }
+  }
+  /* Активный класс для кружка при наведении на ссылку */
+  &.hovered {
+    height: 100px;
+    width: 140px;
+    transform: translateY(calc(-100% - 10px)) translateX(-50%);
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    @media screen and (max-width: 480px) {
+      height: 160px;
+      width: 160px;
+      pointer-events: auto;
+    }
+    #current-block-title {
+      height: auto;
+      width: auto;
+      opacity: 1;
+      pointer-events: auto;
+    }
+    a#current-block-link {
+      display: block;
     }
   }
 }
