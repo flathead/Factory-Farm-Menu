@@ -444,6 +444,15 @@ section.farm-wrapper {
             filter: none;
           }
         }
+        &.item-12 {
+          bottom: 15%;
+          left: 911px;
+          z-index: 8;
+          clip-path: url(#SvgPath-block-4);
+          img {
+            filter: none;
+          }
+        }
       }
 
       &[data-interactive="true"] {

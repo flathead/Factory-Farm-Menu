@@ -476,6 +476,17 @@ section.farm-wrapper .farm-container a .farm-item.item-11 img {
 	filter: none;
 }
 
+section.farm-wrapper .farm-container a .farm-item.item-12 {
+	bottom: 15%;
+	left: 911px;
+	z-index: 8;
+	clip-path: url(#SvgPath-block-4);
+}
+
+section.farm-wrapper .farm-container a .farm-item.item-12 img {
+	filter: none;
+}
+
 section.farm-wrapper .farm-container a[data-interactive="true"] .farm-item:hover {
 	transform: translateY(-10px);
 	filter: brightness(100%) grayscale(0);

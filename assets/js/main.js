@@ -30,9 +30,16 @@ jQuery( function ( $ ) {
 		}, 300);
 	} ); */
 
+	// При прокрутке мышкой на меню добавить горизонтальный скролл
+	$( '.farm-container' ).on( 'mousewheel DOMMouseScroll', function( event ) {
+        const delta = Math.max( -1, Math.min( 1, ( event.originalEvent.wheelDelta || -event.originalEvent.detail ) ) );
+        $( this ).scrollLeft( $( this ).scrollLeft() - ( delta * 40 ) );
+        event.preventDefault();
+    } );
+
 	// При наведении на блок переносить атрибут названия в заголовок
 	if ( $( window ).width() >= 480 ) {
-		$(document).on('mouseenter', function(e) {
+		$(document).on( 'mouseenter', function( e ) {
 			/* console.log(e.target); */
 			const farmLink = $( 'a[data-interactive="true"]' );
 			if ( ! e.target == farmLink ) {
