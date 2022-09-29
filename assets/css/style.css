@@ -589,7 +589,7 @@ section.farm-wrapper .farm-container .animations .anim-4 {
 	height: 10px;
 	border: 2px solid #222;
 	border-radius: 50%;
-	transform: translateY(-50%) translateX(-50%);
+	transform: translateY(calc(-50% - 150px)) translateX(-50%);
 	/* центрируем кружок */
 	position: absolute;
 	/* задаём абсолютное позиционирование, чтобы элемент не влиял на остальные элементы и его можно было бы позиционировать следом за курсором */
@@ -639,7 +639,7 @@ section.farm-wrapper .farm-container .animations .anim-4 {
 .float-info.hovered {
 	height: 100px;
 	width: 140px;
-	transform: translateY(calc(-100% - 10px)) translateX(-50%);
+	transform: translateY(calc(-50% - 220px)) translateX(-50%);
 	border: none;
 	border-radius: 10px;
 	background: rgba(255, 255, 255, 0.9);
