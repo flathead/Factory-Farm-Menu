@@ -1,34 +1,10 @@
 jQuery( function ( $ ) {
-
-	/* const typed = new Typed( '#farm-title', {
-		strings: ['Пожалуйста, подождите'],
-		typeSpeed: 30,
-		stringsElement: null,
-		smartBackspace: true,
-	} ); */
-
 	// Когда изображения в ферме загружены - снять прелоадер
-	$( '.farm-item img' ).waitForImages( function () {
-		$( '.farm-container' ).addClass( 'loaded' );
-		/* if ( $( window ).width() >= 480 ) {
-			typed.strings = ['Наведите курсор на любой блок'];
-		} else {
-			typed.strings = ['Нажмите на любой блок'];
-		} */
-		/* typed.reset(); */
-	});
-
-	// При наведении на блок скрывать облака
-	/* $( '.farm-item' ).on( 'mouseenter', function () {
-		$( '.clouds' ).fadeOut( 300 );
-	} ); */
-
-	// Если курсор за пределами контейнера "фермы" - показывать облака через 300мс
-	/* $( '.farm-container' ).on( 'mouseleave', function () {
-		setTimeout(function () {
-			$( '.clouds' ).fadeIn( 1000 );
-		}, 300);
-	} ); */
+	$( window ).on( 'load', function() {
+		$( '.farm-item img' ).waitForImages( function () {
+			$( '.farm-container' ).addClass( 'loaded' );
+		} );
+	} );
 
 	// При прокрутке мышкой на меню добавить горизонтальный скролл
 	$( '.farm-container' ).on( 'mousewheel DOMMouseScroll', function( event ) {
@@ -40,7 +16,6 @@ jQuery( function ( $ ) {
 	// При наведении на блок переносить атрибут названия в заголовок
 	if ( $( window ).width() >= 480 ) {
 		$(document).on( 'mouseenter', function( e ) {
-			/* console.log(e.target); */
 			const farmLink = $( 'a[data-interactive="true"]' );
 			if ( ! e.target == farmLink ) {
 				$( '#current-block-title' ).hide();
@@ -52,23 +27,10 @@ jQuery( function ( $ ) {
 		.on( 
 			'mouseenter', function() {
 				const linkData = $( this ).attr( 'data-menu' );
-
-				/* typed.strings = ['<img width="20" height="auto" src="./assets/images/svg/link.svg" alt="" />' + linkData];
-				typed.reset();
-
-				$( '#link-anonce' ).addClass('show'); */
-
 				$( '#current-block-title' ).html( linkData ).show();
-
-				/* console.log('Выделено: ' + typed.strings); */
 			},
 		).on(
 			'mouseleave', function() {
-				/* $( '#farm-title' ).css( { 'font-weight' : 'normal' } );
-				typed.strings = [ 'Наведите курсор на любой блок' ];
-				typed.reset();
-				$( '#link-anonce' ).removeClass('show'); */
-
 				$( '#current-block-title' ).hide();
 			}
 		);

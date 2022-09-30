@@ -1,6 +1,6 @@
 {
   "name": "factory_farm",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Virtual farm dynamic menu.",
   "main": "index.js",
   "scripts": {

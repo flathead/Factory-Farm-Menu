@@ -1,67 +1,7 @@
 @charset "UTF-8";
-/**********************************************
- *
- *  ___       _   _                    _ 
- * / __| |     | | | |                  | |
- * | |_| | __ _| |_| |__   ___  __ _  __| |
- * |  _| |/ _` | __| '_ \ / _ \/ _` |/ _` |
- * | | | | (_| | |_| | | |  __/ (_| | (_| |
- * |_| |_|\__,_|\__|_| |_|\___|\__,_|\__,_|
- * https://t.me/krestovsky
- *
- *
- **********************************************/
 /**************************
  * Normalize [START]
  **************************/
-* {
-	box-sizing: border-box;
-	scrollbar-width: thin;
-	scrollbar-color: #2e2e2e transparent;
-}
-
-*::-webkit-scrollbar {
-	width: 2px;
-	height: 2px;
-}
-
-*::-webkit-scrollbar-button {
-	width: 0px;
-	height: 0px;
-}
-
-*::-webkit-scrollbar-thumb {
-	background: #2e2e2e;
-	border: 0px none #ffffff;
-	border-radius: 50px;
-}
-
-*::-webkit-scrollbar-thumb:hover {
-	background: #404040;
-}
-
-*::-webkit-scrollbar-thumb:active {
-	background: #1c1c1c;
-}
-
-*::-webkit-scrollbar-track {
-	background: #ffffff;
-	border: 0px none #ffffff;
-	border-radius: 50px;
-}
-
-*::-webkit-scrollbar-track:hover {
-	background: #d6d6d6;
-}
-
-*::-webkit-scrollbar-track:active {
-	background: #b0b0b0;
-}
-
-*::-webkit-scrollbar-corner {
-	background: transparent;
-}
-
 html,
 body {
 	margin: 0;
@@ -79,151 +19,54 @@ section.farm-wrapper {
 	padding-top: 20px;
 	padding-bottom: 50px;
 	position: relative;
-	/* .farm-title-container {
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: visible;
+}
 
-    p#link-anonce {
-      margin: 0;
-      display: none;
-      position: absolute;
-      bottom: 100%;
-      left: 50%;
-      transform: translateX(-50%) translateY(20px);
-      opacity: 0;
-      font-weight: 100;
-      align-items: center;
-      width: auto;
-      text-align: center;
+section.farm-wrapper > * {
+	box-sizing: border-box;
+	scrollbar-width: thin;
+	scrollbar-color: #2e2e2e transparent;
+}
 
-      @keyframes anonce-show {
-        100% {
-          opacity: 1;
-          transform: translateX(-50%) translateY(10px);
-        }
-      }
+section.farm-wrapper > *::-webkit-scrollbar {
+	width: 2px;
+	height: 2px;
+}
 
-      &.show {
-        display: flex !important;
-        animation: anonce-show 1s forwards ease-in-out;
-      }
-    }
+section.farm-wrapper > *::-webkit-scrollbar-button {
+	width: 0px;
+	height: 0px;
+}
 
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-    }
-    @keyframes blink-caret {
-      50% {
-        border-color: rgb(34, 49, 255);
-      }
-    }
-    @keyframes title-shadow {
-      100% {
-        filter: drop-shadow(0 4px 6px #d6d6d6);
-      }
-    }
+section.farm-wrapper > *::-webkit-scrollbar-thumb {
+	background: #2e2e2e;
+	border: 0px none #ffffff;
+	border-radius: 50px;
+}
 
-    h1#farm-title {
-      font-size: 1.4rem;
-      font-weight: normal;
-      width: auto;
-      margin: 0;
-      white-space: nowrap;
-      @media screen and (max-width: 480px) {
-        width: 100% !important;
-        white-space: pre-wrap !important;
-        text-align: center !important;
-        font-size: 1.2rem !important;
-      }
-      img {
-        margin-right: 6px;
-      }
-    }
-  } */
-	/* .clouds {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: 11;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    pointer-events: none;
-    opacity: 0.9;
-    @media screen and (max-width: 480px) {
-      display: none !important;
-    }
-    @-webkit-keyframes animCloud {
-      from {
-        -webkit-transform: translateX(100%);
-      }
-      to {
-        -webkit-transform: translateX(-100%);
-      }
-    }
-    @-moz-keyframes animCloud {
-      from {
-        -moz-transform: translateX(100%);
-      }
-      to {
-        -moz-transform: translateX(-100%);
-      }
-    }
-    @keyframes animCloud {
-      from {
-        -webkit-transform: translateX(100%);
-        -moz-transform: translateX(100%);
-        -ms-transform: translateX(100%);
-        -o-transform: translateX(100%);
-        transform: translateX(100%);
-      }
-      to {
-        -webkit-transform: translateX(-100%);
-        -moz-transform: translateX(-100%);
-        -ms-transform: translateX(-100%);
-        -o-transform: translateX(-100%);
-        transform: translateX(-100%);
-      }
-    }
-    img.cloud {
-      width: 100%;
-      left: 0;
-      top: 0;
-      position: absolute;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      pointer-events: none;
-      z-index: 12;
-    }
-    .cloud1 {
-      -webkit-animation: animCloud 20s infinite linear;
-      -moz-animation: animCloud 20s infinite linear;
-      animation: animCloud 20s infinite linear;
-    }
-    .cloud2 {
-      -webkit-animation: animCloud 40s infinite linear;
-      -moz-animation: animCloud 40s infinite linear;
-      animation: animCloud 40s infinite linear;
-    }
-    .cloud3 {
-      -webkit-animation: animCloud 60s infinite linear;
-      -moz-animation: animCloud 60s infinite linear;
-      animation: animCloud 60s infinite linear;
-    }
-    .cloud4 {
-      -webkit-animation: animCloud 80s infinite linear;
-      -moz-animation: animCloud 80s infinite linear;
-      animation: animCloud 80s infinite linear;
-    }
-  } */
+section.farm-wrapper > *::-webkit-scrollbar-thumb:hover {
+	background: #404040;
+}
+
+section.farm-wrapper > *::-webkit-scrollbar-thumb:active {
+	background: #1c1c1c;
+}
+
+section.farm-wrapper > *::-webkit-scrollbar-track {
+	background: #ffffff;
+	border: 0px none #ffffff;
+	border-radius: 50px;
+}
+
+section.farm-wrapper > *::-webkit-scrollbar-track:hover {
+	background: #d6d6d6;
+}
+
+section.farm-wrapper > *::-webkit-scrollbar-track:active {
+	background: #b0b0b0;
+}
+
+section.farm-wrapper > *::-webkit-scrollbar-corner {
+	background: transparent;
 }
 
 @media screen and (max-width: 1180px) {
@@ -580,7 +423,7 @@ section.farm-wrapper .farm-container .animations .anim-4 {
 	}
 }
 
-.float-info {
+section.farm-wrapper .float-info {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -589,7 +432,7 @@ section.farm-wrapper .farm-container .animations .anim-4 {
 	height: 10px;
 	border: 2px solid #222;
 	border-radius: 50%;
-	transform: translateY(calc(-50% - 150px)) translateX(-50%);
+	transform: translateY(calc(-50% - 20px)) translateX(-50%);
 	/* центрируем кружок */
 	position: absolute;
 	/* задаём абсолютное позиционирование, чтобы элемент не влиял на остальные элементы и его можно было бы позиционировать следом за курсором */
@@ -602,12 +445,12 @@ section.farm-wrapper .farm-container .animations .anim-4 {
 }
 
 @media screen and (max-width: 480px) {
-	.float-info {
+	section.farm-wrapper .float-info {
 		border: none;
 	}
 }
 
-.float-info #current-block-title {
+section.farm-wrapper .float-info #current-block-title {
 	height: 0;
 	width: 0;
 	opacity: 0;
@@ -622,7 +465,7 @@ section.farm-wrapper .farm-container .animations .anim-4 {
 	color: #222;
 }
 
-.float-info a#current-block-link {
+section.farm-wrapper .float-info a#current-block-link {
 	display: none;
 	margin-top: 10px;
 	color: #1e63d9;
@@ -631,15 +474,18 @@ section.farm-wrapper .farm-container .animations .anim-4 {
 }
 
 @media screen and (min-width: 480px) {
-	.float-info a#current-block-link {
+	section.farm-wrapper .float-info a#current-block-link {
 		display: none !important;
 	}
 }
 
-.float-info.hovered {
-	height: 100px;
-	width: 140px;
-	transform: translateY(calc(-50% - 220px)) translateX(-50%);
+section.farm-wrapper .float-info.hovered {
+	min-height: 100px;
+	min-width: 140px;
+	width: auto;
+	height: auto;
+	padding: 10px;
+	transform: translateY(calc(-50% - 80px)) translateX(-50%);
 	border: none;
 	border-radius: 10px;
 	background: rgba(255, 255, 255, 0.9);
@@ -648,21 +494,22 @@ section.farm-wrapper .farm-container .animations .anim-4 {
 }
 
 @media screen and (max-width: 480px) {
-	.float-info.hovered {
-		height: 160px;
-		width: 160px;
+	section.farm-wrapper .float-info.hovered {
+		padding: 0 10px;
+		height: auto;
+		width: auto;
 		pointer-events: auto;
 	}
 }
 
-.float-info.hovered #current-block-title {
+section.farm-wrapper .float-info.hovered #current-block-title {
 	height: auto;
-	width: auto;
+	width: min-content;
 	opacity: 1;
 	pointer-events: auto;
 }
 
-.float-info.hovered a#current-block-link {
+section.farm-wrapper .float-info.hovered a#current-block-link {
 	display: block;
 }
 

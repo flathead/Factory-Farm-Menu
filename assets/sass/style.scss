@@ -1,59 +1,6 @@
-/**********************************************
- *
- *  ___       _   _                    _ 
- * / __| |     | | | |                  | |
- * | |_| | __ _| |_| |__   ___  __ _  __| |
- * |  _| |/ _` | __| '_ \ / _ \/ _` |/ _` |
- * | | | | (_| | |_| | | |  __/ (_| | (_| |
- * |_| |_|\__,_|\__|_| |_|\___|\__,_|\__,_|
- * https://t.me/krestovsky
- *
- *
- **********************************************/
-
 /**************************
  * Normalize [START]
  **************************/
-
-* {
-  box-sizing: border-box;
-  scrollbar-width: thin;
-  scrollbar-color: rgb(46, 46, 46) transparent;
-
-  &::-webkit-scrollbar {
-    width: 2px;
-    height: 2px;
-  }
-  &::-webkit-scrollbar-button {
-    width: 0px;
-    height: 0px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: #2e2e2e;
-    border: 0px none #ffffff;
-    border-radius: 50px;
-  }
-  &::-webkit-scrollbar-thumb:hover {
-    background: #404040;
-  }
-  &::-webkit-scrollbar-thumb:active {
-    background: #1c1c1c;
-  }
-  &::-webkit-scrollbar-track {
-    background: #ffffff;
-    border: 0px none #ffffff;
-    border-radius: 50px;
-  }
-  &::-webkit-scrollbar-track:hover {
-    background: #d6d6d6;
-  }
-  &::-webkit-scrollbar-track:active {
-    background: #b0b0b0;
-  }
-  &::-webkit-scrollbar-corner {
-    background: transparent;
-  }
-}
 
 html,
 body {
@@ -73,159 +20,52 @@ section.farm-wrapper {
   padding-top: 20px;
   padding-bottom: 50px;
 
+  & > * {
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(46, 46, 46) transparent;
+
+    &::-webkit-scrollbar {
+      width: 2px;
+      height: 2px;
+    }
+    &::-webkit-scrollbar-button {
+      width: 0px;
+      height: 0px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #2e2e2e;
+      border: 0px none #ffffff;
+      border-radius: 50px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #404040;
+    }
+    &::-webkit-scrollbar-thumb:active {
+      background: #1c1c1c;
+    }
+    &::-webkit-scrollbar-track {
+      background: #ffffff;
+      border: 0px none #ffffff;
+      border-radius: 50px;
+    }
+    &::-webkit-scrollbar-track:hover {
+      background: #d6d6d6;
+    }
+    &::-webkit-scrollbar-track:active {
+      background: #b0b0b0;
+    }
+    &::-webkit-scrollbar-corner {
+      background: transparent;
+    }
+  }
+
   @media screen and (max-width: 1180px) {
     padding: 0 20px;
     padding-top: 20px;
     padding-bottom: 50px;
   }
   position: relative;
-
-  /* .farm-title-container {
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: visible;
-
-    p#link-anonce {
-      margin: 0;
-      display: none;
-      position: absolute;
-      bottom: 100%;
-      left: 50%;
-      transform: translateX(-50%) translateY(20px);
-      opacity: 0;
-      font-weight: 100;
-      align-items: center;
-      width: auto;
-      text-align: center;
-
-      @keyframes anonce-show {
-        100% {
-          opacity: 1;
-          transform: translateX(-50%) translateY(10px);
-        }
-      }
-
-      &.show {
-        display: flex !important;
-        animation: anonce-show 1s forwards ease-in-out;
-      }
-    }
-
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-    }
-    @keyframes blink-caret {
-      50% {
-        border-color: rgb(34, 49, 255);
-      }
-    }
-    @keyframes title-shadow {
-      100% {
-        filter: drop-shadow(0 4px 6px #d6d6d6);
-      }
-    }
-
-    h1#farm-title {
-      font-size: 1.4rem;
-      font-weight: normal;
-      width: auto;
-      margin: 0;
-      white-space: nowrap;
-      @media screen and (max-width: 480px) {
-        width: 100% !important;
-        white-space: pre-wrap !important;
-        text-align: center !important;
-        font-size: 1.2rem !important;
-      }
-      img {
-        margin-right: 6px;
-      }
-    }
-  } */
-
-  /* .clouds {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: 11;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    pointer-events: none;
-    opacity: 0.9;
-    @media screen and (max-width: 480px) {
-      display: none !important;
-    }
-    @-webkit-keyframes animCloud {
-      from {
-        -webkit-transform: translateX(100%);
-      }
-      to {
-        -webkit-transform: translateX(-100%);
-      }
-    }
-    @-moz-keyframes animCloud {
-      from {
-        -moz-transform: translateX(100%);
-      }
-      to {
-        -moz-transform: translateX(-100%);
-      }
-    }
-    @keyframes animCloud {
-      from {
-        -webkit-transform: translateX(100%);
-        -moz-transform: translateX(100%);
-        -ms-transform: translateX(100%);
-        -o-transform: translateX(100%);
-        transform: translateX(100%);
-      }
-      to {
-        -webkit-transform: translateX(-100%);
-        -moz-transform: translateX(-100%);
-        -ms-transform: translateX(-100%);
-        -o-transform: translateX(-100%);
-        transform: translateX(-100%);
-      }
-    }
-    img.cloud {
-      width: 100%;
-      left: 0;
-      top: 0;
-      position: absolute;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      pointer-events: none;
-      z-index: 12;
-    }
-    .cloud1 {
-      -webkit-animation: animCloud 20s infinite linear;
-      -moz-animation: animCloud 20s infinite linear;
-      animation: animCloud 20s infinite linear;
-    }
-    .cloud2 {
-      -webkit-animation: animCloud 40s infinite linear;
-      -moz-animation: animCloud 40s infinite linear;
-      animation: animCloud 40s infinite linear;
-    }
-    .cloud3 {
-      -webkit-animation: animCloud 60s infinite linear;
-      -moz-animation: animCloud 60s infinite linear;
-      animation: animCloud 60s infinite linear;
-    }
-    .cloud4 {
-      -webkit-animation: animCloud 80s infinite linear;
-      -moz-animation: animCloud 80s infinite linear;
-      animation: animCloud 80s infinite linear;
-    }
-  } */
 
   // Контейнер для блоков
   .farm-container {
@@ -549,74 +389,77 @@ section.farm-wrapper {
       }
     }
   }
-}
-
-.float-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 10px;
-  height: 10px;
-  border: 2px solid #222;
-  border-radius: 50%;
-  transform: translateY(calc(-50% - 150px)) translateX(-50%); /* центрируем кружок */
-  position: absolute; /* задаём абсолютное позиционирование, чтобы элемент не влиял на остальные элементы и его можно было бы позиционировать следом за курсором */
-  z-index: 999; /* чтобы элемент был над остальными элементами */
-  pointer-events: none; /* чтобы сквозь элемент можно было взаимодействовать с элементами, находящимися под ним */
-  transition: width 0.64s, height 0.64s, border-radius 0.64s, background 0.64s,
-    transform 0.64s;
-  @media screen and (max-width: 480px) {
-    border: none;
-  }
-
-  #current-block-title {
-    height: 0;
-    width: 0;
-    opacity: 0;
-    transition: all 0.64s;
-    padding: 1rem;
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 700;
-    text-align: center;
-    pointer-events: none;
-    text-decoration: none;
-    color: #222;
-  }
-  a#current-block-link {
-    display: none;
-    margin-top: 10px;
-    color: #1e63d9;
-    text-decoration: none;
-    font-weight: 700;
-    @media screen and (min-width: 480px) {
-      display: none !important;
-    }
-  }
-  /* Активный класс для кружка при наведении на ссылку */
-  &.hovered {
-    height: 100px;
-    width: 140px;
-    transform: translateY(calc(-50% - 220px)) translateX(-50%);
-    border: none;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
-    pointer-events: none;
+  .float-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #222;
+    border-radius: 50%;
+    transform: translateY(calc(-50% - 20px)) translateX(-50%); /* центрируем кружок */
+    position: absolute; /* задаём абсолютное позиционирование, чтобы элемент не влиял на остальные элементы и его можно было бы позиционировать следом за курсором */
+    z-index: 999; /* чтобы элемент был над остальными элементами */
+    pointer-events: none; /* чтобы сквозь элемент можно было взаимодействовать с элементами, находящимися под ним */
+    transition: width 0.64s, height 0.64s, border-radius 0.64s, background 0.64s,
+      transform 0.64s;
     @media screen and (max-width: 480px) {
-      height: 160px;
-      width: 160px;
-      pointer-events: auto;
+      border: none;
     }
+
     #current-block-title {
-      height: auto;
-      width: auto;
-      opacity: 1;
-      pointer-events: auto;
+      height: 0;
+      width: 0;
+      opacity: 0;
+      transition: all 0.64s;
+      padding: 1rem;
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 700;
+      text-align: center;
+      pointer-events: none;
+      text-decoration: none;
+      color: #222;
     }
     a#current-block-link {
-      display: block;
+      display: none;
+      margin-top: 10px;
+      color: #1e63d9;
+      text-decoration: none;
+      font-weight: 700;
+      @media screen and (min-width: 480px) {
+        display: none !important;
+      }
+    }
+    /* Активный класс для кружка при наведении на ссылку */
+    &.hovered {
+      min-height: 100px;
+      min-width: 140px;
+      width: auto;
+      height: auto;
+      padding: 10px;
+      transform: translateY(calc(-50% - 80px)) translateX(-50%);
+      border: none;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+      pointer-events: none;
+      @media screen and (max-width: 480px) {
+        padding: 0 10px;
+        height: auto;
+        width: auto;
+        pointer-events: auto;
+      }
+      #current-block-title {
+        height: auto;
+        width: min-content;
+        opacity: 1;
+        pointer-events: auto;
+      }
+      a#current-block-link {
+        display: block;
+      }
     }
   }
 }
